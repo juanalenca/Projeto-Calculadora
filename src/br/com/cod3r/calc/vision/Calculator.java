@@ -1,4 +1,4 @@
-package br.com.cod3r.calc.visao;
+package br.com.cod3r.calc.vision;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

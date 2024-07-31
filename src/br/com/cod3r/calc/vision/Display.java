@@ -1,4 +1,4 @@
-package br.com.cod3r.calc.visao;
+package br.com.cod3r.calc.vision;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -7,6 +7,8 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import br.com.cod3r.calc.model.Memory;
+
 @SuppressWarnings("serial")
 public class Display extends JPanel {
 	
@@ -14,7 +16,7 @@ public class Display extends JPanel {
 	
 	public Display() {
 		setBackground(new Color(32, 32, 32));
-		label = new JLabel("6,24");
+		label = new JLabel(Memory.getInstace().getTextActual());
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("courier", Font.PLAIN, 35));
 		
