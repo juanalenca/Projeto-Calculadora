@@ -3,12 +3,13 @@ package br.com.cod3r.calc.vision;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import br.com.cod3r.calc.model.Memory;
 
 @SuppressWarnings("serial")
 public class Keyboard extends JPanel implements ActionListener {
@@ -34,9 +35,10 @@ public class Keyboard extends JPanel implements ActionListener {
 		c.fill = GridBagConstraints.BOTH;
 		
 		//Line 1
-		c.gridwidth = 3;
+		c.gridwidth = 2;
 		addButton("AC", COLOR_GRAY_DARK, c, 0, 0);
 		c.gridwidth = 1;
+		addButton("±", COLOR_GRAY_DARK, c, 2, 0);
 		addButton("/", COLOR_BLUE, c, 3, 0);
 		
 		//Line 2
@@ -87,7 +89,7 @@ public class Keyboard extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() instanceof JButton) {
 			JButton button = (JButton) e.getSource();
-			System.out.println(button.getText());
+			Memory.getInstace().processCommand(button.getText());
 		}
 	}
 	
